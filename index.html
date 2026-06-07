@@ -8,31 +8,91 @@
 </head>
 <body>
   <header>
-    <h1>Fashion movies</h1>
+    <h1>Fashion Show Viewing Experiment</h1>
+    <img src="data/snapcode.png" alt="Snapcode" class="snapcode">
   </header>
   <main>
-    <div class="grid">
-      <figure class="video-card">
-        <div class="label">01</div>
-        <video src="../data/02.mp4" controls muted loop playsinline preload="metadata"></video>
-      </figure>
-      <figure class="video-card">
-        <div class="label">02</div>
-        <video src="../data/04.mp4" controls muted loop playsinline preload="metadata"></video>
-      </figure>
-      <figure class="video-card">
-        <div class="label">03</div>
-        <video src="../data/black_white_shirt.mp4" controls muted loop playsinline preload="metadata"></video>
-      </figure>
-      <figure class="video-card">
-        <div class="label">04</div>
-        <video src="../data/gray_jacket.mp4" controls muted loop playsinline preload="metadata"></video>
-      </figure>
-      <figure class="video-card">
-        <div class="label">05</div>
-        <video src="../data/brown_sweater.mp4" controls muted loop playsinline preload="metadata"></video>
-      </figure>
-    </div>
+    <section id="movies-section" class="hidden">
+      <header class="section-header">
+        <h2>Movies</h2>
+        <button class="toggle-btn off" data-section="movies">OFF</button>
+      </header>
+      <div class="grid">
+        <figure class="video-card">
+          <div class="label">01</div>
+          <video src="data/02.mp4" controls muted loop playsinline preload="metadata"></video>
+        </figure>
+        <figure class="video-card">
+          <div class="label">02</div>
+          <video src="data/04.mp4" controls muted loop playsinline preload="metadata"></video>
+        </figure>
+        <figure class="video-card">
+          <div class="label">03</div>
+          <video src="data/black_white_shirt.mp4" controls muted loop playsinline preload="metadata"></video>
+        </figure>
+        <figure class="video-card">
+          <div class="label">04</div>
+          <video src="data/gray_jacket.mp4" controls muted loop playsinline preload="metadata"></video>
+        </figure>
+        <figure class="video-card">
+          <div class="label">05</div>
+          <video src="data/brown_sweater.mp4" controls muted loop playsinline preload="metadata"></video>
+        </figure>
+      </div>
+    </section>
+
+    <section id="clothes-section" class="hidden">
+      <header class="section-header">
+        <h2>Clothes</h2>
+        <button class="toggle-btn off" data-section="clothes">OFF</button>
+      </header>
+      <div class="grid">
+        <figure class="image-card">
+          <div class="label">01</div>
+          <img src="data/static_image/02_top_static.png" alt="Top 01">
+        </figure>
+        <figure class="image-card">
+          <div class="label">02</div>
+          <img src="data/static_image/04_top_static.png" alt="Top 02">
+        </figure>
+        <figure class="image-card">
+          <div class="label">03</div>
+          <img src="data/static_image/white_shirt_static.png" alt="White Shirt">
+        </figure>
+        <figure class="image-card">
+          <div class="label">04</div>
+          <img src="data/static_image/gray_jacket_static.png" alt="Gray Jacket">
+        </figure>
+        <figure class="image-card">
+          <div class="label">05</div>
+          <img src="data/static_image/brown_sweater_static.png" alt="Brown Sweater">
+        </figure>
+      </div>
+    </section>
   </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+      toggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const sectionName = this.dataset.section;
+          const sectionId = sectionName + '-section';
+          const section = document.getElementById(sectionId);
+
+          if (section) {
+            section.classList.toggle('hidden');
+            if (this.textContent === 'ON') {
+              this.textContent = 'OFF';
+              this.classList.add('off');
+            } else {
+              this.textContent = 'ON';
+              this.classList.remove('off');
+            }
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

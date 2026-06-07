@@ -18,12 +18,22 @@ body {
 header {
   max-width: 1600px;
   margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 h1 {
   font-size: 1.8rem;
   font-weight: 600;
   text-align: center;
+  flex: 1;
+}
+
+.snapcode {
+  max-width: 100px;
+  height: auto;
+  flex-shrink: 0;
 }
 
 main {
@@ -33,7 +43,7 @@ main {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 16px;
 }
 
@@ -63,9 +73,70 @@ main {
   background: #000;
 }
 
+section {
+  margin-bottom: 48px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.toggle-btn {
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #e0e0e0;
+  border: 1px solid #999;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.toggle-btn:hover {
+  background: #d0d0d0;
+}
+
+.toggle-btn.off {
+  background: #cce5ff;
+}
+
+.toggle-btn.off:hover {
+  background: #99d9ff;
+}
+
+.image-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #f0f0f0;
+}
+
+section.hidden .grid {
+  display: none;
+}
+
 @media (max-width: 1023px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
