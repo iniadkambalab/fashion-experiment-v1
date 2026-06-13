@@ -15,6 +15,14 @@ body {
   line-height: 1.5;
 }
 
+.experiment-note {
+  max-width: 1600px;
+  margin: 0 auto 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #6b1f1f;
+}
+
 header {
   max-width: 1600px;
   margin: 0 auto 24px;
@@ -23,15 +31,49 @@ header {
   justify-content: space-between;
 }
 
+.title-area {
+  flex: 1;
+  text-align: center;
+}
+
 h1 {
   font-size: 1.8rem;
   font-weight: 600;
   text-align: center;
-  flex: 1;
+}
+
+.group-links {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+
+.group-btn {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  transition: opacity 0.2s;
+}
+
+.group-btn:hover {
+  opacity: 0.85;
+}
+
+.group-p {
+  background: #1769aa;
+}
+
+.group-a {
+  background: #c85a17;
 }
 
 .snapcode {
-  max-width: 100px;
+  max-width: 110px;
   height: auto;
   flex-shrink: 0;
 }
@@ -149,7 +191,22 @@ section.hidden .grid {
     padding: 16px;
   }
 
+  .experiment-note {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+
   h1 {
     font-size: 1.4rem;
+  }
+
+  .group-links {
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .group-btn {
+    padding: 6px 12px;
   }
 }
