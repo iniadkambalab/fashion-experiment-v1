@@ -22,7 +22,10 @@
     <section id="movies-section" class="hidden">
       <header class="section-header">
         <h2>Movies</h2>
-        <button class="toggle-btn off" data-section="movies">OFF</button>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggle-movies">
+          <span class="toggle-slider"></span>
+        </label>
       </header>
       <div class="grid">
         <figure class="video-card">
@@ -51,7 +54,10 @@
     <section id="clothes-section" class="hidden">
       <header class="section-header">
         <h2>Clothes</h2>
-        <button class="toggle-btn off" data-section="clothes">OFF</button>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggle-clothes">
+          <span class="toggle-slider"></span>
+        </label>
       </header>
       <div class="grid">
         <figure class="image-card">
@@ -79,23 +85,13 @@
   </main>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const toggleButtons = document.querySelectorAll('.toggle-btn');
-
-      toggleButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const sectionName = this.dataset.section;
-          const sectionId = sectionName + '-section';
+      const toggleInputs = document.querySelectorAll('.toggle-switch input[type="checkbox"]');
+      toggleInputs.forEach(input => {
+        input.addEventListener('change', function() {
+          const sectionId = this.id.replace('toggle-', '') + '-section';
           const section = document.getElementById(sectionId);
-
           if (section) {
-            section.classList.toggle('hidden');
-            if (this.textContent === 'ON') {
-              this.textContent = 'OFF';
-              this.classList.add('off');
-            } else {
-              this.textContent = 'ON';
-              this.classList.remove('off');
-            }
+            section.classList.toggle('hidden', !this.checked);
           }
         });
       });
