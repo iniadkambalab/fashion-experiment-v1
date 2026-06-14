@@ -192,11 +192,54 @@ section {
   flex-direction: column;
 }
 
-.image-card img {
+.image-container {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.image-container img {
   width: 100%;
   height: auto;
   display: block;
   background: #f0f0f0;
+}
+
+.image-container img.hidden {
+  display: none;
+}
+
+.flip-toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.flip-toggle:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.flip-toggle:active {
+  transform: scale(0.95);
+}
+
+.flip-toggle svg {
+  width: 24px;
+  height: 24px;
+  color: #fff;
 }
 
 section.hidden .grid {
