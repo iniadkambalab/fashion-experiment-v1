@@ -45,7 +45,7 @@ Webページの番号は、Lens Studio アプリ
 |      02       |         02         | `data/04.mp4`                   | `data/static_image/04_top_static.png`       |
 |      03       |         03         | `data/black_white_shirt.mp4`    | `data/static_image/white_shirt_static.png`  |
 |      04       |         04         | `data/gray_jacket.mp4`          | `data/static_image/gray_jacket_static.png`  |
-|      05       |         05         | `data/brown_sweater.mp4`        | `data/static_image/brown_sweater_static.png`|
+|      05       |         05         | `data/jeans.mp4`               | `data/static_image/jeans_static.png`|
 
 ## 動画・画像ファイルの参照方法
 
